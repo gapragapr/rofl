@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПаШёЛ нАхУй</title>
+</head>
+<body>
+    <div class="rofl-container">
+        <p><span class="render-span"></span></p>
+        <button>Нажми для продолжения</button>
+    </div>
+
+    <style>
+        body{
+            width: 100%;
+            height: 100vh;
+
+            background: pink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 35px;
+        }
+
+        button{
+            padding: 10px 20px;
+            cursor: pointer;
+            color: #aaa833;
+            margin: auto;
+        }
+    </style>
+
+    <script>
+        const span = document.querySelector('span');
+        const btn = document.querySelector('button');
+        
+        const spanArr = ['Нахуй', 'В пизду', 'В очко', 'К своей матери', 'В сасай', 'Кудасай'];
+        const spanColorsArr = ['#2d89da', '#000000', '#472dda', '#180b64', '#59aa33', 'aaa833'];
+
+        function fuckUfunc(){
+            btn.addEventListener('click', () => {
+                let count = 0;
+
+                setInterval(() => {
+                    if (spanArr[count] !== undefined){
+                        span.textContent = `Мужик, иди ${spanArr[count]}`;
+                        span.style.color = spanColorsArr[count];
+
+                        count++;
+                    }
+                    else{
+                        count = 0;
+                    }
+                }, 1000)
+            })
+        }
+
+        fuckUfunc();
+    </script>
+</body>
+</html>
